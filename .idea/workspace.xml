@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75e45a37-d33d-4532-a5c6-788062860ce5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/catalog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interp_SC.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nc_prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/nc_prod.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spatial_regrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/spatial_regrid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/20040101_d-MERCATOR--TEMP-GREPv2-NWP-b20210519_re-sv01.00.nc" beforeDir="false" afterPath="$PROJECT_DIR$/tests/NWP_complete.nc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_mask.nc" beforeDir="false" afterPath="$PROJECT_DIR$/tests/mask.nc" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,7 +20,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/oceantools$regular_regridding.coverage" NAME="regular_regridding Coverage Results" MODIFIED="1627922808013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/oceantools$nc_prod.coverage" NAME="nc_prod Coverage Results" MODIFIED="1627989185465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/oceantools$regular_regridding.coverage" NAME="regular_regridding Coverage Results" MODIFIED="1627990082458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/oceantools$interp_SC.coverage" NAME="interp_SC Coverage Results" MODIFIED="1627892973525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
@@ -29,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="catalog.yaml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="catalog.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/catalog.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="11" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="11" />
+            <state relative-caret-position="240">
+              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -41,11 +50,29 @@
       <file leaf-file-name="spatial_regrid.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spatial_regrid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="183" column="84" selection-start-line="183" selection-start-column="84" selection-end-line="183" selection-end-column="84" />
+            <state relative-caret-position="449">
+              <caret line="290" column="27" selection-start-line="290" selection-start-column="27" selection-end-line="290" selection-end-column="27" />
               <folding>
                 <element signature="e#23#42#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/anaconda3/envs/work39/lib/python3.9/site-packages/munch/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nc_prod.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nc_prod.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -54,16 +81,16 @@
         <entry file="file://$PROJECT_DIR$/pyproject.toml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup.cfg" pinned="false" current-in-tab="true">
+      <file leaf-file-name="setup.cfg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.cfg">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="75">
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -71,27 +98,6 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__init__.py">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="local.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/anaconda3/envs/work39/lib/python3.9/site-packages/intake/catalog/local.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="284" selection-start-line="284" selection-end-line="284" />
-            </state>
-          </provider>
         </entry>
       </file>
       <file leaf-file-name="sol.py" pinned="false" current-in-tab="false">
@@ -132,11 +138,14 @@
         <option value="$PROJECT_DIR$/drivers/NC_compliant.py" />
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/sol.py" />
-        <option value="$PROJECT_DIR$/catalog.yaml" />
         <option value="$PROJECT_DIR$/regular_regridding.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/pyproject.toml" />
         <option value="$PROJECT_DIR$/setup.cfg" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/nc_prod.py" />
+        <option value="$PROJECT_DIR$/spatial_regrid.py" />
+        <option value="$PROJECT_DIR$/catalog.yaml" />
       </list>
     </option>
   </component>
@@ -150,7 +159,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="752" />
+    <option name="x" value="464" />
     <option name="y" value="23" />
     <option name="width" value="2117" />
     <option name="height" value="1247" />
@@ -168,6 +177,11 @@
             <path>
               <item name="oceantools" type="b2602c69:ProjectViewProjectNode" />
               <item name="oceantools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oceantools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oceantools" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -226,6 +240,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="nc_prod" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="oceantools" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/anaconda3/envs/work39/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nc_prod.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="regular_regridding" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="oceantools" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -248,10 +281,12 @@
     <list>
       <item itemvalue="Python.interp_SC" />
       <item itemvalue="Python.regular_regridding" />
+      <item itemvalue="Python.nc_prod" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.regular_regridding" />
+        <item itemvalue="Python.nc_prod" />
         <item itemvalue="Python.interp_SC" />
       </list>
     </recent_temporary>
@@ -270,7 +305,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="752" y="23" width="2117" height="1247" extended-state="0" />
+    <frame x="464" y="23" width="2117" height="1247" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
@@ -278,7 +314,7 @@
       <window_info anchor="bottom" id="Run" order="8" weight="0.34695652" />
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Python Console" order="3" weight="0.32920793" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="4" visible="true" weight="0.32869565" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.32869565" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.11228915" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="2" />
@@ -390,13 +426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catalog.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/anaconda3/envs/work37/lib/python3.7/site-packages/munch/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -407,27 +436,55 @@
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/pyproject.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nc_prod.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/anaconda3/envs/work39/lib/python3.9/site-packages/munch/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spatial_regrid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="183" column="84" selection-start-line="183" selection-start-column="84" selection-end-line="183" selection-end-column="84" />
+        <state relative-caret-position="449">
+          <caret line="290" column="27" selection-start-line="290" selection-start-column="27" selection-end-line="290" selection-end-column="27" />
           <folding>
             <element signature="e#23#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyproject.toml">
+    <entry file="file://$PROJECT_DIR$/catalog.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="240">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
         </state>
       </provider>
     </entry>

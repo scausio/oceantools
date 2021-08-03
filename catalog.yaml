@@ -4,17 +4,15 @@ source:
     coords:
       latitude: latitude
       longitude: longitude
-      depth: depth   # Are there depth or time in dataset? if yes will be interpolated , if no you need to remove depth or time here. If depth in input data and not in mask, the inteprpolation occurs only at first layer
-      time: time
+      #depth: depth
+      #time: time
     variables:
       temperature: thetao
-      salinity: so
-      v_vel: vomecrt
   output_grid:
     coords:
       latitude: latitude
       longitude: longitude
-      depth: depth
+      #depth: depth
     variables:
         lsm: 'mask'
 
