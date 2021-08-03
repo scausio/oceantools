@@ -4,7 +4,7 @@ source:
     coords:
       latitude: latitude
       longitude: longitude
-      #depth: depth
+      depth: depth
       #time: time
     variables:
       temperature: thetao
@@ -12,7 +12,7 @@ source:
     coords:
       latitude: latitude
       longitude: longitude
-      #depth: depth
+      depth: depth
     variables:
         lsm: 'mask'
 

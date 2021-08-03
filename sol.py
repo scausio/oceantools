@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def seaoverland(data, iterations=1, copy=False):
     """
     Python implementation of G. Girardi's seaoverland.f90.

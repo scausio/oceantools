@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: oceantools
+Version: 0.0.0
+Summary: A collection of simple tools for regular netcdf
+Home-page: https://github.com/scausio/oceantools.git
+Author: Salvatore Causio
+Author-email: salvatore.causio@cmcc.it
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE
+
+# oceantools
+# oceantools
+
+

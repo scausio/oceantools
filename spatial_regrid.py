@@ -1,12 +1,9 @@
 #!/usr/bin/env python
-
 import xarray as xr
 import numpy as np
 from utils import getConfiguration
 from sol import seaoverland
 from argparse import ArgumentParser
-import matplotlib.pyplot as plt
-
 
 def _checkRequest(source, target, cat_in, cat_out):
     if len(source._coord_names) == 4:
@@ -163,13 +160,18 @@ def horizontal_regrid(data_2D, output_grid, cat):
 
 
 def main():
-    # parser = ArgumentParser(description='Interpolate model results')
-    # parser.add_argument('-c', '--catalog', default='catalog.yaml', help='catalog file')
-    # parser.add_argument('-n', '--name', required=True, help='dataset name (in catalog)')
-    # parser.add_argument('-i', '--input', required=True, help='input file')
-    # parser.add_argument('-o', '--output', required=True, help='output file')
-    #
-    # args = parser.parse_args()
+
+
+    parser = ArgumentParser(description='Interpolate model results')
+    parser.add_argument('-i', '--input', required=True, help='input file')
+    parser.add_argument('-o', '--output', required=True, help='target grid')
+    parser.add_argument('-n', '--name', required=True, help='output name')
+
+    args = parser.parse_args()
+
+    input_file = args.input
+    out_file = args.output
+    outname = args.name
 
     source = xr.open_dataset(input_file)
     target = xr.open_dataset(out_file)
@@ -284,11 +286,6 @@ def main():
         print (f'variable {variable} completed')
     print (f'Saving output to {outname}.nc')
     xr.merge(variable_buffer).to_netcdf(f'{outname}.nc')
-
-
-input_file='tests/NWP_noTime.nc'
-out_file='tests/mask_surf.nc'
-outname='prova_nodtime_surf'
 
 
 if __name__ == '__main__':
