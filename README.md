@@ -74,6 +74,7 @@ Here an example:
 >  output_grid:
 >
 >  <ul>
+>    fillvalue: 9999
 >    coords:
 >   <ul>
 >
@@ -109,6 +110,7 @@ Here an example:
 
 <p><strong>output_grid block</strong> allows to define:</p>
 <ul>
+<li>  fill values to be used in the output file</li>
 <li>in the <strong>coords block</strong>, what are the latitude and longitude names. If the <em>output_grid</em> has also vertical coordinate, this has to be defined here.
  If the vertical coordinate is not defined here, (using depth key in catalog) the regrid will be applied only at the first level of the <em>input_file</em>.</li>
 <li>in the <strong>variables block</strong> the user defines the name of the land-sea mask variable. The  mask should has been defined as following: <em>ocean=1 (or True), land=0 (or False)</em></li>

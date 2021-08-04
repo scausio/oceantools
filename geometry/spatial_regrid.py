@@ -82,7 +82,7 @@ def maskLand(tobemasked, target, cat_in,cat_out):
         print(level_msk.shape)
         print(tobemasked.shape)
         tobemasked.values[level_msk != 1] = np.nan
-    tobemasked.values[tobemasked.values == np.nan] = cat_in.fillvalue
+
     return tobemasked
 
 def _checkVarOrder(ds,coords,cat_in):
@@ -176,7 +176,6 @@ def horizontal_regrid(data_2D, output_grid, cat_in,cat_out):
 
 
 def main():
-
 
     parser = ArgumentParser(description='Interpolate model results')
     parser.add_argument('-i', '--input', required=True, help='input file')
@@ -305,8 +304,13 @@ def main():
         variable_buffer.append(output_ds)
         print (f'variable {variable} completed')
     print (f'Saving output to {outname}.nc')
-    xr.merge(variable_buffer).to_netcdf(f'{outname}.nc')
 
+    outNC=xr.merge(variable_buffer)
+    outNC=outNC.fillna(value=float(cat_out.fillvalue))
+    outNC.attrs['_FillValue'] = float(cat_out.fillvalue)
+    outNC.attrs['missing_value'] = float(cat_out.fillvalue)
+    print (outNC)
+    outNC.to_netcdf(f'{outname}.nc')
 
 if __name__ == '__main__':
     main()

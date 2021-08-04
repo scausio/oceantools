@@ -2,14 +2,15 @@ source:
   input_file:
     fillvalue: 1e20
     coords:
-      latitude: lat
-      longitude: lon
+      latitude: latitude
+      longitude: longitude
       depth: depth
       time: time
     variables:
       temperature: thetao
-      salinity: so
+      #salinity: so
   output_grid:
+    fillvalue: 9999
     coords:
       latitude: latitude
       longitude: longitude
