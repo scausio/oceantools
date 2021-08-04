@@ -47,8 +47,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="48" column="10" lean-forward="true" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+            <state relative-caret-position="505">
+              <caret line="121" column="102" selection-start-line="121" selection-start-column="102" selection-end-line="121" selection-end-column="102" />
             </state>
           </provider>
         </entry>
@@ -98,7 +98,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="209" />
+    <option name="x" value="50" />
     <option name="y" value="23" />
     <option name="width" value="2149" />
     <option name="height" value="1154" />
@@ -253,7 +253,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="209" y="23" width="2149" height="1154" extended-state="0" />
+    <frame x="50" y="23" width="2149" height="1154" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="12" />
@@ -263,8 +263,8 @@
       <window_info anchor="bottom" id="Run" order="8" weight="0.34626302" />
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Python Console" order="3" weight="0.32920793" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="4" visible="true" weight="0.3576159" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.111532986" />
+      <window_info anchor="bottom" id="Terminal" order="4" visible="true" weight="0.3576159" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.111532986" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="2" />
       <window_info anchor="right" id="SciView" order="0" visible="true" weight="0.32985288" />
@@ -435,8 +435,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="48" column="10" lean-forward="true" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+        <state relative-caret-position="505">
+          <caret line="121" column="102" selection-start-line="121" selection-start-column="102" selection-end-line="121" selection-end-column="102" />
         </state>
       </provider>
     </entry>

@@ -13,9 +13,9 @@ The tool is  written in Python3, the use of a virtual environment is suggested.
 <li><em>conda env create -f environment.yml</em></li>
 </ul>
 
-<strong>Please be sure that anaconda in installed under your machine!  </strong>
+<strong>Please be sure that anaconda is installed under your machine!  </strong>
 
-<p>Activate the virtual envirnonment:</p>
+<p>Activate the virtual environment:</p>
 <ul>
 <li><em>conda activate oceantools</em></li>
 </ul>
@@ -92,7 +92,7 @@ Here an example:
 >----------------------------------------
 
 >
-> **#** is the comment character in catalog.\
+> **#** is the comment character in catalog.
 >
 
 
@@ -119,6 +119,6 @@ In _<em>oceantools/geometry/tests</em> directory some example netcdf  are availa
 
 <p>Examples of test commands: </p>
  <ul>
-<li>python ./spatial_regrid.py  -i ../tests/NWP_noTime.nc -o ../tests/mask.nc -n example_1  ---> for emperature horizontal and vertical regrid without time dimension  </li>
+<li>python ./spatial_regrid.py  -i ../tests/NWP_noTime.nc -o ../tests/mask.nc -n example_1  ---> for temperature horizontal and vertical regrid without time dimension  </li>
 <li>python ./spatial_regrid.py  -i ../tests/NWP_2vars.nc -o ../tests/mask.nc -n example_2 ---> for salinity and temperature horizontal and vertical regrid  </li>
 <li>python ./spatial_regrid.py  -i ../tests/NWP_complete.nc -o ../tests/mask.nc -n example_3 ---> temperature horizontal and vertical regrid with time dimension</li>
