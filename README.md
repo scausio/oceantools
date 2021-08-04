@@ -9,19 +9,15 @@ The tool is  written in Python3, the use of a virtual environment is suggested.
 
 <p>In the oceantools/install you can find the yaml file to build a new environment:</p>
 <ul>
-```
 <li>cd oceantools/install</li>
 <li>conda env create -f environment.yml</li>
-```
 </ul>
 
 !Please be sure that anaconda in installed under your machine!
 
 <p>Activate the virtual envirnonment:</p>
 <ul>
-```
 <li>conda activate oceantools</li>
-```
 </ul>
 
 
@@ -30,10 +26,8 @@ The tool is  written in Python3, the use of a virtual environment is suggested.
 
 <p>The command is:</p>
 <ul>
-```
 <li>cd oceantools/geometry</li>
 <li>python spatial_regrid.py -i \<input_file\> -o \<output_grid\> -n <\output filename\> </li>
-```
 </ul>
 
 
@@ -51,28 +45,28 @@ The user should provides also some information about the name for dimensions and
 here an example:
 
 
-> -------- catalog.yaml file --------\n
-> source:\n
->  input_file:\n
->    fillvalue: 1e20\n
->    coords:\n
->      latitude: lat\n
->      longitude: lon\n
->      depth: depth\n
->      time: time\n
->    variables:\n
->      temperature: thetao\n
->      #salinity: so\n
->  output_grid:\n
->    coords:\n
->      latitude: lat\n
->      longitude: lon\n
->      depth: depth\n
->    variables:\n
->        lsm: mask\n
->----------------------------------------\n
+> -------- catalog.yaml file --------\s\s
+> source:\s\s
+>  input_file:\s\s
+>    fillvalue: 1e20\s\s
+>    coords:\s\s
+>      latitude: lat\s\s
+>      longitude: lon\s\s
+>      depth: depth\s\s
+>      time: time\s\s
+>    variables:\s\s
+>      temperature: thetao\s\s
+>      #salinity: so\s\s
+>  output_grid:\s\s
+>    coords:\s\s
+>      latitude: lat\s\s
+>      longitude: lon\s\s
+>      depth: depth\s\s
+>    variables:\s\s
+>        lsm: mask\s\s
+>----------------------------------------\s\s
 >
-> **#** is the comment character in catalog.\n
+> **#** is the comment character in catalog.\s\s
 >
 
 
@@ -94,9 +88,9 @@ Only four names allowed in the coords block: latitude, longitude, time, depth</l
 <li>in the variables block the user defines the name of the land-sea mask variable. The  mask should has been defined as following: ocean=1 (or True), land=0 (or False)</li>
 </ul>
 
+##Tests
 In tests folder some example netcdf  are available, with/without time and depth dimensions, with one or two variables.
-
-examples of run test:
+####Examples of running test:
 
 ./spatial_regrid.py  -i ../tests/NWP_noTime.nc -o ../tests/mask.nc -n example_1  ---> for emperature horizontal and vertical regrid without time dimension
 ./spatial_regrid.py  -i ../tests/NWP_2vars.nc -o ../tests/mask.nc -n example_2 ---> for salinity and temperature horizontal and vertical regrid
