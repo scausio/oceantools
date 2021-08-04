@@ -1,0 +1,24 @@
+source:
+  input_file:
+    fillvalue: 1e20
+    coords:
+      latitude: latitude
+      longitude: longitude
+      depth: depth
+      #time: time
+    variables:
+      temperature: thetao
+  output_grid:
+    coords:
+      latitude: latitude
+      longitude: longitude
+      depth: depth
+    variables:
+        lsm: 'mask'
+
+
+
+
+
+
+
