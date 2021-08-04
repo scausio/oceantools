@@ -119,6 +119,15 @@ In _<em>oceantools/geometry/tests</em> directory some example netcdf  are availa
 
 <p>Examples of test commands: </p>
  <ul>
-<li>python ./spatial_regrid.py  -i ../tests/NWP_noTime.nc -o ../tests/mask.nc -n example_1  ---> for temperature horizontal and vertical regrid without time dimension  </li>
-<li>python ./spatial_regrid.py  -i ../tests/NWP_2vars.nc -o ../tests/mask.nc -n example_2 ---> for salinity and temperature horizontal and vertical regrid  </li>
-<li>python ./spatial_regrid.py  -i ../tests/NWP_complete.nc -o ../tests/mask.nc -n example_3 ---> temperature horizontal and vertical regrid with time dimension</li>
+<li>python ./spatial_regrid.py  -i ./tests/NWP_noTime.nc -o ./tests/mask.nc -n example_1  ---> for temperature horizontal and vertical regrid without time dimension  </li>
+<li>python ./spatial_regrid.py  -i ./tests/NWP_2vars.nc -o ./tests/mask.nc -n example_2 ---> for salinity and temperature horizontal and vertical regrid  </li>
+<li>python ./spatial_regrid.py  -i ./tests/NWP_complete.nc -o ./tests/mask.nc -n example_3 ---> temperature horizontal and vertical regrid with time dimension</li>
+
+Each of these examples requires a proper configuration of the catalog according to dimensions/variables in each input_file/output_file. If the configuration is not properly set, an error warns about the catalog check needed. The log will also show the dumping of files and catalogs, so the user can easily checks where is the error.
+
+<h2><em>Notes</em></h2>
+Before interpolation on the new grid, the tool applies a Sea-Over-Land (SOL) procedure.
+Here SOL is a python application implemented by E.Jansen at CMCC from a G. Girardi's fortran development. SOL extrapolates sea information on the land to avoid the loosing of data near coast due to interpolation with NaN or FillValue. Here we fixed the number of SOL iteration to 20, which in general is more than enough. Anyway, the user could decide to change the iterations, replacing <strong>iterations=20</strong>  in <strong>horizontal_regrid</strong> module of <em>oceantools/geometry/spatial_regrid.py</em>. Please consider that SOL affects only data on land, and if, for example, the procedure fills completely an island, nothing occurs anymore even if the iterations continue.
+
+<h3> Author reference</h3>
+Please contact Salvatore at <em>salvatore.causio@cmcc.it</em> for questions, bugs, suggestions.

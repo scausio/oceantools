@@ -5,21 +5,40 @@ from utils import getConfiguration
 from sol import seaoverland
 from argparse import ArgumentParser
 
-def _checkRequest(source, target, cat_in, cat_out):
+def _checkCatalog(source, target, cat_in, cat_out):
+
+    try:
+        source[cat_in.coords.latitude]
+        source[cat_in.coords.longitude]
+    except:
+        exit("Please check input_file coords in catalog")
+
+    try:
+        target[cat_out.coords.latitude]
+        target[cat_out.coords.longitude]
+    except:
+        exit("Please check input_file coords in catalog")
+
     if len(source._coord_names) == 4:
         try:
             source[cat_in.coords.depth]
         except:
             exit(
                 'Input dataset has depth dimension but depth has not been required or it has a wrong name in input_file config')
+        try:
+            source[cat_in.coords.time]
+        except:
+            exit(
+                'Input dataset has time dimension but time has not been required or it has a wrong name in input_file config')
+
         code = 0
     if len(source._coord_names) == 2:
         if len(cat_in.coords) > 2:
-            exit(f'Input dataset has 2 dimensions but {len(cat_out.coords)} has been required in input_file config')
+            exit(f'Input dataset has 2 dimensions but {len(cat_in.coords)} has been required in input_file config')
         code = 1
     if len(source._coord_names) == 3:
         if len(cat_in.coords) != 3:
-            exit(f'Input dataset has 3 dimensions but {len(cat_out.coords)} has been required in input_file config')
+            exit(f'Input dataset has 3 dimensions but {len(cat_in.coords)} has been required in input_file config')
 
         try:
             source[cat_in.coords.depth]
@@ -52,11 +71,9 @@ def maskLand(tobemasked, target, cat_in,cat_out):
         depths=target[cat_out.coords.depth].values
 
         for depth in depths:
-            print(f'depth {depth}')
+            print(f'masking depth {depth}')
             level_msk = target[cat_out.variables.lsm].sel(depth=depth).values
-            print (level_msk.shape)
             tomask = tobemasked.sel(depth=depth).values
-            print(tomask.shape)
             tomask[level_msk != 1] = np.nan
             tobemasked.sel(depth=depth).values = tomask
     else:
@@ -148,9 +165,8 @@ def horizontal_regrid(data_2D, output_grid, cat_in,cat_out):
 
     data_2D.values[data_2D.values == cat_in.fillvalue] = np.nan  # data_2D.where()
     # apply seaoverland
-    sol = seaoverland(np.ma.masked_array(data_2D.values, mask=np.isnan(data_2D.values)), iterations=10).filled(
+    sol = seaoverland(np.ma.masked_array(data_2D.values, mask=np.isnan(data_2D.values)), iterations=20).filled(
         fill_value=np.nan)
-    # sol_source[cat.variables[variable]].sel({cat.coords.depth:d_val, cat.coords.time:t_val}).values= sol.filled(fill_value=np.nan)
     data_2D.values = sol
     # horizontal regrid
     linear_interpolated = data_2D.interp(
@@ -179,9 +195,16 @@ def main():
     # opening catalog
     cat_in = getConfiguration('catalog.yaml')['input_file']
     cat_out = getConfiguration('catalog.yaml')['output_grid']
+    print ("***********************     INPUT FILE      ***********************")
+    print (source)
+    print ("***********************     OUTPUT FILE      ***********************")
     print(target)
-
-    #
+    print ("***********************     CATALOG for INPUT FILE      ***********************")
+    print (cat_in)
+    print ("***********************     CATALOG for OUTPUT FILE      ***********************")
+    print (cat_out)
+    # chech the request
+    _checkCatalog(source, target, cat_in, cat_out)
 
     # this checks 3 and 4 dimension
     coords = list(source._coord_names)
@@ -189,9 +212,6 @@ def main():
     coords.remove(cat_in.coords.latitude)
 
 
-
-    # chech the request
-    _checkRequest(source, target, cat_in, cat_out)
 
     source = _checkVarOrder(source, coords,cat_in)
 
