@@ -34,11 +34,11 @@ def _checkCatalog(source, target, cat_in, cat_out):
         code = 0
     if len(source._coord_names) == 2:
         if len(cat_in.coords) > 2:
-            exit(f'Input dataset has 2 dimensions but {len(cat_in.coords)} has been required in input_file config')
+            exit(f'Input dataset has 2 dimensions but {len(cat_in.coords)} have been required in input_file config')
         code = 1
     if len(source._coord_names) == 3:
         if len(cat_in.coords) != 3:
-            exit(f'Input dataset has 3 dimensions but {len(cat_in.coords)} has been required in input_file config')
+            exit(f'Input dataset has 3 dimensions but {len(cat_in.coords)} have been required in input_file config')
 
         try:
             source[cat_in.coords.depth]

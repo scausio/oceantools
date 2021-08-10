@@ -74,7 +74,6 @@ Here an example:
 >  output_grid:
 >
 >  <ul>
->    fillvalue: 9999
 >    coords:
 >   <ul>
 >
@@ -88,6 +87,89 @@ Here an example:
 >        lsm: mask
 >
 >    </ul>
+>
+> </ul>
+>----------------------------------------
+
+>
+> **#** is the comment character in catalog.\
+>
+
+
+
+<p><strong>input_file block</strong> allows to define:</p>
+<ul>
+<li>  fill values of the input file</li>
+<li> in the <strong>coords block</strong>,  the latitude and longitude names.
+ If the <em>input_file</em> has also time and/or depth dimensions these must be declared here. If not, the procedure raise a self-explaining error.
+ If the  <em>input_file</em> has time dimension, the regridding will be applied at each time.
+<strong>!!!Only four names allowed in the coords block: latitude, longitude, time, depth!!!</strong></li>
+<li> in the <strong>variables block</strong>, the variable/s to regrid. Here the user can define one or more variables, and the keys used in the block (temperature and salinity in the example) will be used as variable name in the output file.
+</ul>
+
+<p><strong>output_grid block</strong> allows to define:</p>
+<ul>
+<li>in the <strong>coords block</strong>, what are the latitude and longitude names. If the <em>output_grid</em> has also vertical coordinate, this has to be defined here.
+ If the vertical coordinate is not defined here, (using depth key in catalog) the regrid will be applied only at the first level of the <em>input_file</em>.</li>
+<li>in the <strong>variables block</strong> the user defines the name of the land-sea mask variable. The  mask should has been defined as following: <em>ocean=1 (or True), land=0 (or False)</em></li>
+</ul>
+
+<h2>Test </h2>
+In _<em>oceantools/geometry/tests</em> directory some example netcdf  are available, with/without time and depth dimensions, with one or two variables.
+
+<p>Examples of test commands: </p>
+ <ul>
+<li>python ./spatial_regrid.py  -i ../tests/NWP_noTime.nc -o ../tests/mask.nc -n example_1  ---> for emperature horizontal and vertical regrid without time dimension  </li>
+<li>python ./spatial_regrid.py  -i ../tests/NWP_2vars.nc -o ../tests/mask.nc -n example_2 ---> for salinity and temperature horizontal and vertical regrid  </li>
+<li>python ./spatial_regrid.py  -i ../tests/NWP_complete.nc -o ../tests/mask.nc -n example_3 ---> temperature horizontal and vertical regrid with time dimension</li>
+
+Each of these examples requires a proper configuration of the catalog according to dimensions/variables in each input_file/output_file. If the configuration is not properly set, an error warns about the catalog check needed. The log will also show the dumping of files and catalogs, so the user can easily checks where is the error.
+
+
+> -------- catalog.yaml file --------
+> source:
+> <ul>
+>
+>  input_file:
+>  <ul>
+>  fillvalue: 1e20
+>
+>   coords:
+>    <ul>
+>
+>      latitude: lat
+>
+>      longitude: lon
+>
+>      depth: depth
+>
+>      time: time
+>
+>   </ul>
+>    variables:
+>    <ul>
+>
+>      temperature: thetao
+>      #salinity: so
+>    </ul>
+>    </ul>
+>  output_grid:
+>
+>  <ul>
+>    fillvalue: 9999
+>
+>    coords:  <ul>
+>
+>      latitude: lat
+>      longitude: lon
+>      depth: depth
+>    </ul>
+>    variables:
+>    <ul>
+>
+>        lsm: mask
+>
+>  </ul>
 >
 > </ul>
 >----------------------------------------
@@ -111,7 +193,7 @@ Here an example:
 <p><strong>output_grid block</strong> allows to define:</p>
 <ul>
 <li>  fill values to be used in the output file</li>
-<li>in the <strong>coords block</strong>, what are the latitude and longitude names. If the <em>output_grid</em> has also vertical coordinate, this has to be defined here.
+<li>in the <strong>coords block</strong>, the latitude and longitude names. If the <em>output_grid</em> has also vertical coordinate, this has to be defined here.
  If the vertical coordinate is not defined here, (using depth key in catalog) the regrid will be applied only at the first level of the <em>input_file</em>.</li>
 <li>in the <strong>variables block</strong> the user defines the name of the land-sea mask variable. The  mask should has been defined as following: <em>ocean=1 (or True), land=0 (or False)</em></li>
 </ul>
