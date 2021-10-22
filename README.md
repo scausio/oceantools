@@ -75,7 +75,7 @@ Here an example:
 >
 >  <ul>
 >    fillvalue: 9999
->
+>    sol_iterations: 5
 >    coords:  <ul>
 >
 >      latitude: lat
