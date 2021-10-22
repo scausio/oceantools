@@ -10,6 +10,7 @@ source:
       temperature: thetao
       #salinity: so
   output_grid:
+    sol_iterations: 10
     fillvalue: 9999
     coords:
       latitude: latitude

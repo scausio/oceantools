@@ -4,6 +4,7 @@
     <list default="true" id="75e45a37-d33d-4532-a5c6-788062860ce5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/catalog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/catalog.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/geometry/spatial_regrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/spatial_regrid.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +41,8 @@
       <file leaf-file-name="spatial_regrid.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geometry/spatial_regrid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1646">
-              <caret line="59" column="17" lean-forward="true" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="98" />
+            <state relative-caret-position="612">
+              <caret line="182" column="74" lean-forward="true" selection-start-line="182" selection-start-column="74" selection-end-line="182" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -49,8 +50,8 @@
       <file leaf-file-name="catalog.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geometry/catalog.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="180">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -58,8 +59,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="46" selection-start-line="46" selection-end-line="95" selection-end-column="1" />
+            <state relative-caret-position="1361">
+              <caret line="210" lean-forward="true" selection-start-line="126" selection-end-line="210" />
             </state>
           </provider>
         </entry>
@@ -126,10 +127,10 @@
         <option value="$PROJECT_DIR$/sol.py" />
         <option value="$PROJECT_DIR$/install.sh" />
         <option value="$PROJECT_DIR$/spatial_regrid.py" />
-        <option value="$PROJECT_DIR$/geometry/catalog.yaml" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/geometry/catalog.yaml" />
         <option value="$PROJECT_DIR$/geometry/spatial_regrid.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -143,7 +144,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="445" />
+    <option name="x" value="245" />
     <option name="y" value="23" />
     <option name="width" value="2149" />
     <option name="height" value="1154" />
@@ -154,7 +155,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,10 +171,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -319,7 +321,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="445" y="23" width="2149" height="1154" extended-state="0" />
+    <frame x="245" y="23" width="2149" height="1154" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="12" />
@@ -329,7 +331,7 @@
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Python Console" order="3" weight="0.32920793" />
       <window_info anchor="bottom" id="Terminal" order="4" visible="true" weight="0.3576159" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.11343142" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1181775" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="2" />
       <window_info anchor="right" id="SciView" order="0" weight="0.32985288" />
@@ -348,33 +350,6 @@
       <window_info anchor="bottom" id="Find" order="7" weight="0.32923368" />
       <window_info anchor="bottom" id="Anonymous Apex" order="13" weight="0.32954547" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Log Viewer" order="16" weight="0.32954547" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.34626302" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.111532986" />
-      <window_info anchor="right" id="SciView" order="0" visible="true" weight="0.32985288" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.32923368" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="4" visible="true" weight="0.3576159" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="SOQL Query" order="14" visible="true" weight="0.32954547" />
-      <window_info anchor="bottom" id="Messages" order="15" />
-      <window_info anchor="bottom" id="Anonymous Apex" order="13" weight="0.32954547" />
-      <window_info anchor="bottom" id="Python Console" order="3" weight="0.32920793" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -527,22 +502,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/geometry/catalog.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="180">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/geometry/spatial_regrid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1646">
-          <caret line="59" column="17" lean-forward="true" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="98" />
+        <state relative-caret-position="612">
+          <caret line="182" column="74" lean-forward="true" selection-start-line="182" selection-start-column="74" selection-end-line="182" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="46" selection-start-line="46" selection-end-line="95" selection-end-column="1" />
+        <state relative-caret-position="1361">
+          <caret line="210" lean-forward="true" selection-start-line="126" selection-end-line="210" />
         </state>
       </provider>
     </entry>

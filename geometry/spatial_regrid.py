@@ -66,7 +66,7 @@ def _checkCatalog(source, target, cat_in, cat_out):
             exit(f'Mask dataset has 2 dimensions but {len(cat_out.coords)} has been required in outfile config')
 
 
-def maskLand(tobemasked, target, cat_in,cat_out):
+def maskLand(tobemasked, target,cat_out):
     if len(cat_out.coords)==3:
         depths=target[cat_out.coords.depth].values
 
@@ -161,11 +161,11 @@ def subsampleDepth(source, target,cat_in,cat_out):
             return source
 
 
-def horizontal_regrid(data_2D, output_grid, cat_in,cat_out):
+def horizontal_regrid(data_2D, output_grid, cat_in,cat_out,iterations):
 
-    data_2D.values[data_2D.values == cat_in.fillvalue] = np.nan  # data_2D.where()
+    data_2D.values[data_2D.values == cat_in.fillvalue] = np.nan
     # apply seaoverland
-    sol = seaoverland(np.ma.masked_array(data_2D.values, mask=np.isnan(data_2D.values)), iterations=20).filled(
+    sol = seaoverland(np.ma.masked_array(data_2D.values, mask=np.isnan(data_2D.values)), iterations=iterations).filled(
         fill_value=np.nan)
     data_2D.values = sol
     # horizontal regrid
@@ -194,6 +194,7 @@ def main():
     # opening catalog
     cat_in = getConfiguration('catalog.yaml')['input_file']
     cat_out = getConfiguration('catalog.yaml')['output_grid']
+    iterations = int(cat_out.sol_iterations)
     print ("***********************     INPUT FILE      ***********************")
     print (source)
     print ("***********************     OUTPUT FILE      ***********************")
@@ -209,8 +210,6 @@ def main():
     coords = list(source._coord_names)
     coords.remove(cat_in.coords.longitude)
     coords.remove(cat_in.coords.latitude)
-
-
 
     source = _checkVarOrder(source, coords,cat_in)
 
@@ -242,7 +241,7 @@ def main():
                     var_data=var_data.expand_dims([cat_in.coords.depth],axis=1)
                 for d_index, d_val in enumerate(var_data[cat_in.coords.depth]):
                     data_2D = var_data.sel({cat_in.coords.depth: d_val, cat_in.coords.time: t_val}).copy()
-                    linear_interpolated = horizontal_regrid(data_2D, hor_interp_ds, cat_in,cat_out)
+                    linear_interpolated = horizontal_regrid(data_2D, hor_interp_ds, cat_in,cat_out,iterations)
                     hor_interp_ds[variable].values[t_index][d_index] = linear_interpolated.values
                     # plt.imshow(hor_interp_ds[variable].sel({cat_in.coords.depth: d_val, cat_in.coords.time: t_val}).values)
                     # plt.show()
@@ -255,7 +254,7 @@ def main():
                 print('The input dataset has Time Lat Lon dimension')
                 for t_index, t_val in enumerate(var_data[cat_in.coords.time]):
                     data_2D = var_data.sel({cat_in.coords.time: t_val})
-                    linear_interpolated = horizontal_regrid(data_2D, hor_interp_ds, cat_in,cat_out)
+                    linear_interpolated = horizontal_regrid(data_2D, hor_interp_ds, cat_in,cat_out,iterations)
                     hor_interp_ds[variable].values[t_index] = linear_interpolated
             except:
                 hor_interp_ds[variable] = (
@@ -266,7 +265,7 @@ def main():
                 print (var_data)
                 for d_index, d_val in enumerate(var_data[cat_in.coords.depth]):
                     data_2D = var_data.sel({cat_in.coords.depth: d_val}).copy()
-                    linear_interpolated = horizontal_regrid(data_2D, hor_interp_ds, cat_in,cat_out)
+                    linear_interpolated = horizontal_regrid(data_2D, hor_interp_ds, cat_in,cat_out,iterations)
                     hor_interp_ds[variable].values[d_index] = linear_interpolated
         elif len(cat_in.coords) == 2:
             print('The input dataset has Lat Lon dimension')
@@ -275,7 +274,7 @@ def main():
                 np.zeros((len(hor_interp_ds[cat_out.coords.latitude]), len(
                     hor_interp_ds[cat_out.coords.longitude]))))
 
-            linear_interpolated = horizontal_regrid(var_data, hor_interp_ds, cat_in,cat_out)
+            linear_interpolated = horizontal_regrid(var_data, hor_interp_ds, cat_in,cat_out,iterations)
             hor_interp_ds[variable].values = linear_interpolated
 
         if len(cat_out.coords) == 3:
@@ -296,10 +295,12 @@ def main():
                     output_ds[variable].values[i] = maskLand(output_ds[variable].isel({cat_in.coords.time: i}), target,
                                                              cat_in, cat_out)
             else:
-                output_ds[variable].values = maskLand(output_ds[variable], target, cat_in, cat_out)
+                output_ds[variable].values = maskLand(output_ds[variable], target, cat_out)
         except:
-            output_ds[variable].values = maskLand(output_ds[variable], target, cat_in, cat_out)
-
+            try:
+                output_ds[variable].values = maskLand(output_ds[variable], target, cat_out)
+            except:
+                exit('Please check the mask file')
 
         variable_buffer.append(output_ds)
         print (f'variable {variable} completed')
